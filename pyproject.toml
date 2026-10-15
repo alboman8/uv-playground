@@ -1,0 +1,30 @@
+[project]
+name = "uv-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "alboman08", email = "alexandreb@fossa.systems" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+prod = [
+    "joke-lib @ git+ssh://git@github.com/alboman8/uv-joke-lib.git@v0.1.0",
+]
+test = [
+    "joke-lib @ git+ssh://git@github.com/alboman8/uv-joke-lib.git@main",
+]
+dev = [
+    "pytest",
+    "joke-lib @ git+ssh://git@github.com/alboman8/uv-joke-lib.git@dev",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+default-groups = []
+conflicts = [[{ group = "prod" }, { group = "test" }, { group = "dev" }]]
