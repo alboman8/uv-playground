@@ -28,7 +28,7 @@ wheels = [
 [[package]]
 name = "joke-lib"
 version = "0.1.0"
-source = { git = "ssh://git@github.com/alboman8/uv-joke-lib.git?rev=dev#8f270016583bccb4bedd4c614c625616fd020f72" }
+source = { git = "ssh://git@github.com/alboman8/uv-joke-lib.git?rev=dev#dd6a61404ec83839f499be2d35dbbf95cddce0c0" }
 
 [[package]]
 name = "joke-lib"
@@ -90,7 +90,7 @@ source = { editable = "." }
 
 [package.dev-dependencies]
 dev = [
-    { name = "joke-lib", version = "0.1.0", source = { git = "ssh://git@github.com/alboman8/uv-joke-lib.git?rev=dev#8f270016583bccb4bedd4c614c625616fd020f72" } },
+    { name = "joke-lib", version = "0.1.0", source = { git = "ssh://git@github.com/alboman8/uv-joke-lib.git?rev=dev#dd6a61404ec83839f499be2d35dbbf95cddce0c0" } },
     { name = "pytest" },
 ]
 prod = [
