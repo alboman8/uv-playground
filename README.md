@@ -10,23 +10,22 @@ ls -la
 
 ## 2. Sync the `dev` group and run
 
+`uv run` always syncs the environment first, so this alone creates the `.venv` and installs the `dev` group (no need for a separate `uv sync --group dev`):
+
 ```bash
-uv sync --group dev
-ls -la
 uv run --group dev python main.py
+ls -la
 ```
 
 ## 3. Switch to `test`
 
 ```bash
-uv sync --group test
 uv run --group test python main.py
 ```
 
 ## 4. Switch to `prod`
 
 ```bash
-uv sync --group prod
 uv run --group prod python main.py
 ```
 
@@ -76,7 +75,6 @@ uv run --group dev python main.py
 Now it reflects the new commit.
 
 ```bash
-uv sync --group test
 uv run --group test python main.py
 ```
 
@@ -88,7 +86,7 @@ If you're changing `uv-joke-lib` and `uv-playground` at the same time and don't 
 
 ```bash
 uv pip install -e ../uv-joke-lib
-uv run --group dev python main.py
+uv run python main.py
 ```
 
 Your local, uncommitted changes to `uv-joke-lib` are picked up immediately. Running a plain `uv sync` afterward reverts back to whatever is pinned in `uv.lock`:
